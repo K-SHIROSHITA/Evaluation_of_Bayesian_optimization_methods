@@ -41,7 +41,6 @@ def main(n, m, dim, noise, bounds):
         model=model,
         beta=1
     )
-
     next_X, acq_val = optimize_acqf(
         acq_function=qNEI,
         bounds=bounds,
