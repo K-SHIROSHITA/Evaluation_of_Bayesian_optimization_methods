@@ -38,7 +38,8 @@ def main(n, m, dim, noise, bounds):
         beta=1
     )
     MV = MaxVariance(
-        model=model
+        model=model,
+        beta=1
     )
 
     next_X, acq_val = optimize_acqf(
