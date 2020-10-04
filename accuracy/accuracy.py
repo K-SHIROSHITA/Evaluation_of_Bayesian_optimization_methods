@@ -10,8 +10,8 @@ from botorch.optim import optimize_acqf
 import torch
 import gpytorch
 
-from accuracy.create_function import generate_data, generate_comparisons
-from accuracy.self_acquisition import MaxVariance
+from create_function import generate_data, generate_comparisons
+from self_acquisition import MaxVariance
 
 def main(n, m, dim, noise, bounds):
     train_X_random, train_X_mesh, train_y_random, train_y_mesh = generate_data(n, dim=dim)
