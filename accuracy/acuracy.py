@@ -28,7 +28,18 @@ def main(n, m, dim, noise, bounds):
         X_baseline=train_X_random.float()
     )
 
-    EI =
+    EI = ExpectedImprovement(
+        model=model,
+        best_f=0.9
+    )
+
+    UCB = UpperConfidenceBound(
+        model=model,
+        beta=1
+    )
+    MV = MaxVariance(
+        model=model
+    )
 
     next_X, acq_val = optimize_acqf(
         acq_function=qNEI,
