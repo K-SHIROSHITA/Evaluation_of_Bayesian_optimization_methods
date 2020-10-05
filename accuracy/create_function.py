@@ -10,9 +10,7 @@ import gpytorch
 def utility(X, covar_module):
     """ Given X, output corresponding utility (i.e., the latent function)
     """
-    covar = covar_module(X)
-    K = covar.numpy()
-    y = np.random.multivariate_normal(mean=np.zeros(len(X)), cov=K)
+    y = X[0]
 
     return y
 
