@@ -82,12 +82,11 @@ def main(n, m, dim, noise, bounds):
     plt.clf()
     plt.plot(train_X_mesh, train_y_mesh)
     plt.plot(points, pred_y)
-
     plt.savefig("./image/function_plot.png")
+    
     print("MSE", mse)
-    print("候補",next_X0)
-    print("探索済の最大予測平均", next_X1)
-    print(acq_val)
+    print("次の探索候補の座標", next_X0)
+    print("探索済の最大予測平均の座標", next_X1)
 
 
 if __name__ == '__main__':
