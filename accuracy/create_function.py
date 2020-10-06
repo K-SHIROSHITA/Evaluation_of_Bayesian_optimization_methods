@@ -17,7 +17,6 @@ def utility(X, covar_module):
 
 def generate_data(n, dim=1):
     # ガウス過程に従う関数を作成する
-    covar_module = gpytorch.kernels.ScaleKernel(gpytorch.kernels.RBFKernel(ard_num_dims=1))
     """ Generate data X and y """
     # X is randomly sampled from dim-dimentional unit cube
     # we recommend using double as opposed to float tensor here for
@@ -25,7 +24,7 @@ def generate_data(n, dim=1):
     X_random = torch.rand(n, dim, dtype=torch.float64) * 2 - 1  # 書き換えてる
     X_mesh = torch.linspace(-1, 1, 101).reshape(-1, 1)
     X_all = torch.Tensor(np.vstack((X_random.numpy(), X_mesh.numpy())))
-    y_all = utility(X_all, covar_module)
+    y_all = utility(X_all)
     y_random = y_all[:n]
     y_mesh = y_all[n:]
 
